@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//atempt 2
 public class CustomerTest {
 
 	@Test
@@ -61,7 +61,6 @@ public class CustomerTest {
 		try {
 			assertEquals(a.getAccountNumber(),c.getAccountWithHighestBalance());
 		} catch (NoAccountsException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
