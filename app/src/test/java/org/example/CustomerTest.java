@@ -2,6 +2,7 @@ package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +20,10 @@ public class CustomerTest {
     @Test
     public void testMejorSaldo() throws NoAccountsException {
         Customer customer = new Customer();
-        Account account1 = new Account(100, "10");
-        Account account2 = new Account(200, "20");
+        Account account1 = new Account();
+        account1.setParameters(100, "10");
+        Account account2 = new Account();
+        account2.setParameters(200, "20");
 
         customer.addAccount(account1);
         customer.addAccount(account2);

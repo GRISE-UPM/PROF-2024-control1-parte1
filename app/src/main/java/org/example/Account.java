@@ -9,11 +9,13 @@ public class Account {
 	private float initialAmount;
 	private List<Transaction> transactions;
 	
-	Account(float initialAmount, String accountNumber) {
+	Account() {
 		transactions = new ArrayList<Transaction>();
+	}
+    public void setParameters(float initialAmount, String accountNumber) {
         this.initialAmount = initialAmount;
         this.accountNumber = accountNumber;
-	}
+    }
 	
 	public float getCurrentBalance() {
 		
