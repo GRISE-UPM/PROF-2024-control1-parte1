@@ -4,12 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-import es.upm.grise.prof.curso2024.control1.Account;
-import es.upm.grise.prof.curso2024.control1.Customer;
-import es.upm.grise.prof.curso2024.control1.NoAccountsException;
-
-
-public class CustomerTest {
+public class JupiterTest {
 
     @Test
     //Verifica que el método getAccountWithHighestBalance() lanza una excepción cuando el Customer no tiene asociada ninguna Account
