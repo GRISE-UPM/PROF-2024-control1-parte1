@@ -10,6 +10,10 @@ public class Customer {
 	Customer() {
 		accounts = new ArrayList<Account>();
 	}
+
+	public List<Account> getAccounts() {
+        return this.accounts;
+    }
 	
 	public String getAccountWithHighestBalance() throws NoAccountsException {
 		
