@@ -1,5 +1,4 @@
-package es.upm.grise.prof.curso2024.control1;
+package org.example;
 
 public class NoAccountsException extends Exception {
-
 }

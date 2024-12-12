@@ -1,4 +1,4 @@
-package es.upm.grise.prof.curso2024.control1;
+package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class Customer {
 	
 	private List<Account> accounts;
 	
-	Customer() {
+	public Customer() {
 		accounts = new ArrayList<Account>();
 	}
 	
@@ -33,6 +33,12 @@ public class Customer {
 		
 		return selectedAccount;
 		
+		
 	}
-	
+
+	public void addAccount(Account account) {
+
+        accounts.add(account);
+
+    }
 }
