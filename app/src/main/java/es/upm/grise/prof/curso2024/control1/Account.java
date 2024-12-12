@@ -9,9 +9,10 @@ public class Account {
 	private float initialAmount;
 	private List<Transaction> transactions;
 	
-	Account() {
-		transactions = new ArrayList<Transaction>();
+	public Account() {
+	    transactions = new ArrayList<>();
 	}
+
 	
 	public float getCurrentBalance() {
 		
