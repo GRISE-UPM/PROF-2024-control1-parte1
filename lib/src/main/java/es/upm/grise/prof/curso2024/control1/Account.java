@@ -15,7 +15,7 @@ public class Account {
 	
 	public float getCurrentBalance() {
 		
-		float result = initialAmount;
+		float result = getInitialAmount();
 		
 		for(Transaction transaction : getTransactions()) {
 			result += transaction.getAmount();
@@ -34,6 +34,18 @@ public class Account {
 
 	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public float getInitialAmount() {
+		return initialAmount;
+	}
+
+	public void setInitialAmount(float initialAmount) {
+		this.initialAmount = initialAmount;
 	}
 
 }
