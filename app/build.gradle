@@ -1,0 +1,58 @@
+/*
+ * Archivo build.gradle 
+ */
+
+plugins {
+    id 'java'
+    id 'jacoco'  
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    implementation 'com.google.guava:guava:32.1.2-jre' 
+}
+jacoco {
+    toolVersion = "0.8.12" // Última versión estable de JaCoCo
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'BUNDLE' // Cobertura a nivel de proyecto completo
+            limit {
+                counter = 'INSTRUCTION'
+                value = 'COVEREDRATIO'
+                minimum = 1.0 // 100% de cobertura
+            }
+        }
+    }
+}
+
+// Asegurarse de que la verificación se ejecute después de las pruebas
+check.dependsOn jacocoTestCoverageVerification
+
+
