@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: es.upm.grise.prof.curso2024.control1.CustomerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in es.upm.grise.prof.curso2024.control1.CustomerTest
+testGetAccountNumber  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.NoSuchFieldException: accountNumber
+	at es.upm.grise.prof.curso2024.control1.CustomerTest.testGetAccountNumber(CustomerTest.java:28)
+
