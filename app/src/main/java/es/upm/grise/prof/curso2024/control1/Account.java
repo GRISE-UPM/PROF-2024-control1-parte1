@@ -9,7 +9,7 @@ public class Account {
 	private float initialAmount;
 	private List<Transaction> transactions;
 	
-	Account() {
+	public Account() {
 		transactions = new ArrayList<Transaction>();
 	}
 	
@@ -28,4 +28,11 @@ public class Account {
 		return accountNumber;
 	}
 
+	public void setAccountNumber(String number) {
+		accountNumber = number;
+	}
+
+	public void setInitialAmount(float amount) {
+		initialAmount = amount;
+	}
 }
