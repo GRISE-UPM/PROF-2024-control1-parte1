@@ -9,8 +9,10 @@ public class Account {
 	private float initialAmount;
 	private List<Transaction> transactions;
 	
-	Account() {
+	Account(float initialAmount, String accountNumber) {
 		transactions = new ArrayList<Transaction>();
+        this.initialAmount = initialAmount;
+        this.accountNumber = accountNumber;
 	}
 	
 	public float getCurrentBalance() {
