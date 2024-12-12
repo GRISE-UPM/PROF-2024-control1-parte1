@@ -7,7 +7,7 @@ public class Account {
 	
 	String accountNumber;
 	float initialAmount;
-	private List<Transaction> transactions;
+	List<Transaction> transactions;
 	
 	Account() {
 		transactions = new ArrayList<Transaction>();

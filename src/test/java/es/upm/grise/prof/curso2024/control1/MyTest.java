@@ -57,11 +57,12 @@ public class MyTest {
         transactions.add(transaction2);
 
         Account account = new Account();
+        account.transactions = transactions;
         account.initialAmount = AMOUNT_ONE;
 
         assertEquals(account.getCurrentBalance(), AMOUNT_ONE*3);
-        verify(transaction1.getAmount());
-        verify(transaction2.getAmount());
+        verify(transaction1).getAmount();
+        verify(transaction2).getAmount();
 
     }
     @Test public void testPregunta6() throws NoAccountsException{
