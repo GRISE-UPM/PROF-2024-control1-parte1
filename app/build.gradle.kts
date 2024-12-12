@@ -18,9 +18,14 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
-
+    
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    // Dependencia de Mockito para pruebas
+    testImplementation("org.mockito:mockito-core:5.5.0")
+
+    // Opcional: Soporte para Mockito con JUnit Jupiter
+    testImplementation("org.mockito:mockito-junit-jupiter:5.5.0")
     // This dependency is used by the application.
     implementation(libs.guava)
 }
