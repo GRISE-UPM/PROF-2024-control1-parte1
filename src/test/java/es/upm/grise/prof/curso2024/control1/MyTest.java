@@ -83,5 +83,6 @@ public class MyTest {
         assertEquals(customer.getAccountWithHighestBalance(), STRONG_ACCOUNT_NUMBER);
         verify(weakAccount).getCurrentBalance();
         verify(strongAccount).getCurrentBalance();
+        verify(strongAccount).getAccountNumber();
     }
 }
