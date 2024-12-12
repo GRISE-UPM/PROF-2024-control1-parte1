@@ -21,6 +21,9 @@ java {
 dependencies {
     testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.11.3'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
+    // https://mvnrepository.com/artifact/org.mockito/mockito-all
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+
     //testRuntimeOnly 'org.mokito'
 }
 
