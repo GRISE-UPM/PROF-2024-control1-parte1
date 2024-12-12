@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Dependencias para pruebas unitarias con JUnit Jupiter
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+application {
+mainClass = 'es.upm.grise.profundizacion.curso2024.Account'
+applicationDefaultJvmArgs = ['-Dparameter=a_value']
+}
+
+
+test {
+    useJUnitPlatform()
+}
