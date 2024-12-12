@@ -12,13 +12,11 @@ public class Customer {
 	}
 
 	public String getAccountWithHighestBalance() throws NoAccountsException {
-		if (accounts.isEmpty()) {
+		if (accounts.isEmpty())
 			throw new NoAccountsException();
-		}
 
 		String selectedAccount = "";
 		float maxBalance = Float.MIN_VALUE;
-
 		for (Account account : accounts) {
 			if (account.getCurrentBalance() > maxBalance) {
 				selectedAccount = account.getAccountNumber();
