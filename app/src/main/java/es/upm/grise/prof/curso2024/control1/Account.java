@@ -1,4 +1,5 @@
-package src.es.upm.grise.prof.curso2024.control1;
+package es.upm.grise.prof.curso2024.control1;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,17 @@ public class Account {
 	
 	public String getAccountNumber() {
 		return accountNumber;
+	}
+
+	// añadir setter para pponer ns que
+	// saldp ini
+	public void setInitialAmount(float initialAmount) {
+		this.initialAmount = initialAmount;
+	}
+
+	// num cuenta
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 
 }

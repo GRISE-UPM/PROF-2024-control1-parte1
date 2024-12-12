@@ -1,4 +1,4 @@
-package src.es.upm.grise.prof.curso2024.control1;
+package es.upm.grise.prof.curso2024.control1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +33,11 @@ public class Customer {
 		
 		return selectedAccount;
 		
+	}
+
+	// Método para agregar cuentas
+	public void addAccount(Account account) {
+		accounts.add(account);
 	}
 	
 }
