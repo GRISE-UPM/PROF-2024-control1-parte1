@@ -27,5 +27,11 @@ public class Account {
 	public String getAccountNumber() {
 		return accountNumber;
 	}
-
+	//agregado por mi
+	public void setAmount(float accounts) {
+		this.initialAmount = accounts;
+	}
+	public void setNumber(String accounts) {
+		this.accountNumber = accounts;
+	}
 }

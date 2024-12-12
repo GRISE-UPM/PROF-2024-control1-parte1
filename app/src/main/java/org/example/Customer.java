@@ -34,5 +34,9 @@ public class Customer {
 		return selectedAccount;
 		
 	}
+	//agregado por mi
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
 	
 }

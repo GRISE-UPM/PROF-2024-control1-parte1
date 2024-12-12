@@ -5,10 +5,36 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+import java.util.ArrayList;
+import java.util.List;
 public class AppTest {
-    @Test public void appHasAGreeting() {
-        Account classUnderTest = new Account();
-        assertEquals(1, 1);
+
+    @Test
+    void testgetAccountWithHighestBalance() {
+        
+        Customer customer = new Customer();
+
+        
+        assertThrows(NoAccountsException.class, customer::getAccountWithHighestBalance, 
+                "Deberia de haber lanzado NoAccountsException cuando no hay cuentas asociadas.");
+    }
+    @Test
+    void testgetAccountWithHighestBalance2() throws NoAccountsException {
+        float a=2000;
+        float b=3000;
+        Customer customer = new Customer();
+        Account cuenta1=new Account();
+        Account cuenta2=new Account();
+        cuenta1.setAmount(a);
+        cuenta1.setNumber("1");
+        cuenta2.setNumber("2");
+        cuenta2.setAmount(b);
+        List<Account> accounts = new ArrayList<>();
+        accounts.add(cuenta1);
+        accounts.add(cuenta2);
+        customer.setAccounts(accounts);
+        String highestBalanceAccountNumber = customer.getAccountWithHighestBalance();
+
+        assertEquals("2", highestBalanceAccountNumber,"Deberia haber lanzadoNoAccountsException cuando no hay cuentas asociadas.");
     }
 }
