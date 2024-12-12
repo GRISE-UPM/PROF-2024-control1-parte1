@@ -1,7 +1,11 @@
-plugins {id 'java'}
+plugins {
+    id 'java'
+    id 'jacoco'
+}
 
 def mockitoVersion = '5.7.0'
 def jUnitPlatformVersion = '5.10.0'
+def jacocoVersion = '0.8.12'
 
 repositories {mavenCentral()}
 
@@ -11,6 +15,18 @@ dependencies {
     testImplementation "org.mockito:mockito-core:${mockitoVersion}" // es esto
 }
 
-java {toolchain {languageVersion = JavaLanguageVersion.of(11)}}
+java {toolchain {languageVersion = JavaLanguageVersion.of(17)}}
 
-tasks.named('test') {useJUnitPlatform()}
+tasks.named('test') {
+    useJUnit()
+    finalizedBy jacocoTestReport 
+}
+
+jacoco {toolVersion = "${jacocoVersion}"}
+
+jacocoTestCoverageVerification {
+    violationRules {rule {limit {minimum = 1.00}}}
+}
+
+
+check.dependsOn jacocoTestCoverageVerification
