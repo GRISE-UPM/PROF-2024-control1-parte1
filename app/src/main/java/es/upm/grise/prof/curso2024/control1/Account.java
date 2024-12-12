@@ -28,4 +28,8 @@ public class Account {
 		return accountNumber;
 	}
 
+	public void setAccount(String accountNumber, float initialAmount) {
+        this.accountNumber = accountNumber;
+		this.initialAmount = initialAmount;
+    }
 }
