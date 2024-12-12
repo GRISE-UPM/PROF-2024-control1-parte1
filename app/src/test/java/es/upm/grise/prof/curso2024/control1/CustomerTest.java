@@ -9,6 +9,8 @@ class CustomerTest {
     void testGetAccountWithHighestBalanceThrowsExceptionWhenNoAccounts() {
         // Arrange: Create a Customer with no accounts
         Customer customer = new Customer();
+        // Print to confirm the test is running
+        //System.out.println("Running test: testGetAccountWithHighestBalanceThrowsExceptionWhenNoAccounts");
 
         // Act & Assert: Verify that calling the method throws the NoAccountsException
         assertThrows(NoAccountsException.class, customer::getAccountWithHighestBalance);
