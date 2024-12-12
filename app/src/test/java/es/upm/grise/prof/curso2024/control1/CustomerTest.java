@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Mockito:
+import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
+
+
 public class CustomerTest {
 
     private Customer cliente;
@@ -42,7 +47,5 @@ public class CustomerTest {
         String numCuentaExpected = "09876";
         String highestBalanceAccountNumber = cliente.getAccountWithHighestBalance();
         assertEquals(numCuentaExpected, highestBalanceAccountNumber);
-
-
     }
 }

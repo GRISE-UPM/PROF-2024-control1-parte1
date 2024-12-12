@@ -27,6 +27,9 @@ dependencies {
     // mi liena
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 
+    // Mi linea - Dependencia para Mockito
+    testImplementation 'org.mockito:mockito-core:5.5.0'
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
