@@ -40,4 +40,9 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+
 }

@@ -21,4 +21,26 @@ public class AccountTestMockito {
         float balanceExpected = 500.0f;
         assertEquals(balanceExpected, mockAccount.getCurrentBalance());
     }
+
+    @Test
+    public void testGetCurrentBalanceWithMockTransactions() {
+
+        final float mockSAldoIni = 100.0f;
+        final float mockTransac = 50.0f;
+        final float mockBalanceExcepted = 150.0f;
+
+        Account account = new Account();
+        account.setInitialAmount(mockSAldoIni);
+
+        // Creamos un mock para la transacción
+        Transaction mockTransaction = mock(Transaction.class);
+        when(mockTransaction.getAmount()).thenReturn(mockTransac);
+
+        // Agregamos la transacción simulada
+        account.getTransactions().add(mockTransaction);
+
+        // Testeamos
+        float currentBalance = account.getCurrentBalance();
+        assertEquals(mockBalanceExcepted, currentBalance);
+    }
 }

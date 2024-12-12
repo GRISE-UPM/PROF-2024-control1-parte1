@@ -10,6 +10,11 @@ plugins {
     id 'application'
 }
 
+plugins {
+    id 'jacoco'
+}
+
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -52,3 +57,33 @@ tasks.named('test') {
 tasks.test {
     jvmArgs '-Dnet.bytebuddy.experimental=true'
 }
+
+jacoco {
+    toolVersion = "0.8.10" // Asegúrate de usar una versión actualizada de JaCoCo
+}
+
+jacocoTestReport {
+    dependsOn test // Generar el informe después de ejecutar los tests
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'METHOD'
+
+            // Asegurar que el coverage de ramas sea del 100%
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 1.0
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification
+
