@@ -35,4 +35,8 @@ public class Account {
 	public void setInitialAmount(float amount) {
 		initialAmount = amount;
 	}
+
+	public void addTransaction(Transaction transaction) {
+		transactions.add(transaction);
+	}
 }

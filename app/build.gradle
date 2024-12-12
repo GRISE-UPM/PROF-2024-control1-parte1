@@ -23,6 +23,7 @@ dependencies {
     // JUnit Jupiter dependencies for testing
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 
+    // Mockito dependencies for mocking
     testImplementation 'org.mockito:mockito-core:5.4.0'
 }
 
@@ -46,4 +47,9 @@ java {
 application {
     // Define the main class for the application.
     mainClass = 'org.example.App'
+}
+
+// Configuración de JVM para Byte Buddy en tests
+tasks.test {
+    jvmArgs '-Dnet.bytebuddy.experimental=true'
 }
