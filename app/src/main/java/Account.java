@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,5 +37,11 @@ public class Account {
 	public void setInitialAmount(float initialAmount) {
 		this.initialAmount = initialAmount;
 	}
+
+	public void addTransaction(Transaction transaction) {
+
+        transactions.add(transaction);
+
+    }
 
 }

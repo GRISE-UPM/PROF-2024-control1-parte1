@@ -1,9 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-import org.example.Customer;
-import org.example.NoAccountsException;
-import org.example.Account;
 
 class CustomerTest {
 
@@ -44,6 +42,26 @@ class CustomerTest {
         }
         assertEquals("789", result);
     }
+
+    @Test
+    void getAccountWithHighestBalance_ShouldReturnCorrectAccountNumber() throws NoAccountsException {
+        Customer customer = new Customer();
+        Account account1 = mock(Account.class);
+        Account account2 = mock(Account.class);
+        Account account3 = mock(Account.class);
+
+        when(null).thenReturn("123");
+        when(account2.getAccountNumber()).thenReturn("456");
+        when(account3.getAccountNumber()).thenReturn("789");
+
+        when(account1.getInitialAmount()).thenReturn(100.0f);
+        when(account2.getInitialAmount()).thenReturn(200.0f);
+        when(account3.getInitialAmount()).thenReturn(300.0f);
+        String result = customer.getAccountWithHighestBalance();
+        assertEquals("67890", result); 
+
+        }
+
 
     
 }

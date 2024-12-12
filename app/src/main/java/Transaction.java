@@ -1,5 +1,3 @@
-package org.example;
-
 public class Transaction {
 	
 	String concept;
@@ -8,5 +6,6 @@ public class Transaction {
 	public float getAmount() {
 		return amount;
 	}
+	
 	
 }
