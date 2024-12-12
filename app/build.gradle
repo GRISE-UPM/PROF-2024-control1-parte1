@@ -7,37 +7,21 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
+    id 'java'
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
-    // This dependency is used by the application.
     implementation libs.guava
-
-    // JUnit Jupiter dependencies for testing
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
-
-    // Mockito dependencies for mocking
     testImplementation 'org.mockito:mockito-core:5.4.0'
 }
 
-testing {
-    suites {
-        // Configure the built-in test suite
-        test {
-            // Use JUnit Jupiter test framework
-            useJUnitJupiter('5.10.3')
-        }
-    }
-}
-
-// Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(23)
@@ -45,11 +29,32 @@ java {
 }
 
 application {
-    // Define the main class for the application.
     mainClass = 'org.example.App'
 }
 
-// Configuración de JVM para Byte Buddy en tests
 tasks.test {
     jvmArgs '-Dnet.bytebuddy.experimental=true'
 }
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = true
+        csv.required = false
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 1.0
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification

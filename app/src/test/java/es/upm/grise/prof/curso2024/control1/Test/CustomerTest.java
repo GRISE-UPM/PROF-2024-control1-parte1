@@ -6,15 +6,18 @@ import es.upm.grise.prof.curso2024.control1.*;
 
 public class CustomerTest {
 
+    // Constantes para evitar el code smell
     private static final float FIRST_ACCOUNT_BALANCE = 100.0f;
     private static final float SECOND_ACCOUNT_BALANCE = 200.0f;
     private static final float THIRD_ACCOUNT_BALANCE = 50.0f;
 
+    private static final String ACCOUNT_NUMBER_1 = "123";
+    private static final String ACCOUNT_NUMBER_2 = "456";
+    private static final String ACCOUNT_NUMBER_3 = "789";
 
     @Test
-    public void testGetAccountWithHighestBalanceThrowsExceptionWhenNoAccounts() {
+    public void testGetAccountWithHighestBalanceException() {
         Customer customer = new Customer();
-
         assertThrows(NoAccountsException.class, customer::getAccountWithHighestBalance);
     }
 
@@ -22,15 +25,15 @@ public class CustomerTest {
     public void testGetAccountWithHighestBalance() throws NoAccountsException {
 
         Account firstAccount = new Account();
-        firstAccount.setAccountNumber("12345");
+        firstAccount.setAccountNumber(ACCOUNT_NUMBER_1);
         firstAccount.setInitialAmount(FIRST_ACCOUNT_BALANCE);
 
         Account secondAccount = new Account();
-        secondAccount.setAccountNumber("67890");
+        secondAccount.setAccountNumber(ACCOUNT_NUMBER_2);
         secondAccount.setInitialAmount(SECOND_ACCOUNT_BALANCE);
 
         Account thirdAccount = new Account();
-        thirdAccount.setAccountNumber("11223");
+        thirdAccount.setAccountNumber(ACCOUNT_NUMBER_3);
         thirdAccount.setInitialAmount(THIRD_ACCOUNT_BALANCE);
 
         Customer customer = new Customer();
@@ -38,8 +41,8 @@ public class CustomerTest {
         customer.addAccount(secondAccount);
         customer.addAccount(thirdAccount);
 
-        String accountWithHighestBalance = customer.getAccountWithHighestBalance();
+        String highestBalance = customer.getAccountWithHighestBalance();
 
-        assertEquals("67890", accountWithHighestBalance);
+        assertEquals(ACCOUNT_NUMBER_2, highestBalance);
     }
 }
