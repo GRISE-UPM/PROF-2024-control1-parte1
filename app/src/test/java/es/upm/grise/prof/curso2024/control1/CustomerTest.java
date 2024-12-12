@@ -4,10 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-// Mockito:
-import org.mockito.Mockito;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 public class CustomerTest {
@@ -47,5 +45,36 @@ public class CustomerTest {
         String numCuentaExpected = "09876";
         String highestBalanceAccountNumber = cliente.getAccountWithHighestBalance();
         assertEquals(numCuentaExpected, highestBalanceAccountNumber);
+    }
+
+    // TEST CON MOCKITO
+    @Test
+    public void testGetAccountWithHighestBalanceReturnsCorrectAccountNumberUsingMockito() throws NoAccountsException {
+        // Arrange
+        Customer customer = new Customer();
+
+        // Creamos mocks para las cuentas
+        Account mockAccount1 = mock(Account.class);
+        Account mockAccount2 = mock(Account.class);
+
+        // Configuramos los mocks
+        String mockNumAccount1 = "9999";
+        float mockSaldoAccount1 = 100.0f;
+        when(mockAccount1.getAccountNumber()).thenReturn(mockNumAccount1);
+        when(mockAccount1.getCurrentBalance()).thenReturn(mockSaldoAccount1); // Saldo de la primera cuenta
+
+        String mockNumAccount2 = "7878";
+        float mockSaldoAccount2 = 600.0f;
+        when(mockAccount2.getAccountNumber()).thenReturn(mockNumAccount2);
+        when(mockAccount2.getCurrentBalance()).thenReturn(mockSaldoAccount2); // Saldo de la segunda cuenta
+
+        // Agregar las cuentas al cliente
+        customer.addAccount(mockAccount1);
+        customer.addAccount(mockAccount2);
+
+        // Testeamos
+        String numCuentaExpected = "7878";
+        String accountWithHighestBalance = customer.getAccountWithHighestBalance();
+        assertEquals(numCuentaExpected, accountWithHighestBalance);
     }
 }
