@@ -1,0 +1,16 @@
+plugins {id 'java'}
+
+def mockitoVersion = '5.7.0'
+def jUnitPlatformVersion = '5.10.0'
+
+repositories {mavenCentral()}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${jUnitPlatformVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jUnitPlatformVersion}"
+    testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+}
+
+java {toolchain {languageVersion = JavaLanguageVersion.of(17)}}
+
+tasks.named('test') {useJUnitPlatform()}
