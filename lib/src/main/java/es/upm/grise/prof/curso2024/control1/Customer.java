@@ -8,12 +8,12 @@ public class Customer {
 	private List<Account> accounts;
 	
 	Customer() {
-		accounts = new ArrayList<Account>();
+		setAccounts(new ArrayList<Account>());
 	}
 	
 	public String getAccountWithHighestBalance() throws NoAccountsException {
 		
-		if(accounts.isEmpty()) {
+		if(getAccounts().isEmpty()) {
 			throw new NoAccountsException();
 		}
 		
@@ -21,7 +21,7 @@ public class Customer {
 		String selectedAccount = "";
 		float maxBalance = 0;
 		
-		for(Account account : accounts) {
+		for(Account account : getAccounts()) {
 			
 			if(account.getCurrentBalance() > maxBalance) {
 				
@@ -33,6 +33,14 @@ public class Customer {
 		
 		return selectedAccount;
 		
+	}
+
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
 	}
 	
 }
