@@ -1,16 +1,10 @@
 package es.upm.grise.prof.curso2024.control1;
-
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.TestInstance.Lifecycle;
-
 import java.util.List;
-import java.util.ArrayList;
-import org.junit.jupiter.api.Assertions.*;
 public class CustomerTest {
     private Customer customer;
     private Customer customer2;
@@ -38,5 +32,22 @@ public class CustomerTest {
         account3.setInitialAmount(10000.0f);
         String highestBalanceAccount = customer2.getAccountWithHighestBalance();
         assertEquals(account3.getAccountNumber(),highestBalanceAccount,"El número de cuenta con mayor balance es: "+highestBalanceAccount);
+    }
+    @Test
+    public void testGetAccountWithHighestBalanceMockito()throws NoAccountsException{
+        customer2=new Customer();
+        account1 = mock(Account.class);
+        account2 = mock(Account.class);
+        account3 = mock(Account.class);
+        List<Account> accounts = List.of(account1, account2, account3);
+        customer2.setAccounts(accounts);
+        when(account1.getCurrentBalance()).thenReturn(100.0f);
+        when(account2.getCurrentBalance()).thenReturn(1000.0f);
+        when(account3.getCurrentBalance()).thenReturn(10000.0f);
+        when(account1.getAccountNumber()).thenReturn("1");
+        when(account2.getAccountNumber()).thenReturn("2");
+        when(account3.getAccountNumber()).thenReturn("3");
+        String highestBalanceAccount= customer2.getAccountWithHighestBalance();
+        assertEquals(account3.getAccountNumber(),highestBalanceAccount);
     }
 }
