@@ -76,8 +76,7 @@ public class MyTest {
 
         Account strongAccount = mock(Account.class);
         when(strongAccount.getCurrentBalance()).thenReturn(STRONG_INITIAL_AMOUNT);
-        when(weakAccount.getAccountNumber()).thenReturn(STRONG_ACCOUNT_NUMBER);
-
+        when(strongAccount.getAccountNumber()).thenReturn(STRONG_ACCOUNT_NUMBER);
         customer.accounts.add(weakAccount);
         customer.accounts.add(strongAccount);
 
