@@ -34,5 +34,9 @@ public class Customer {
 		return selectedAccount;
 		
 	}
+
+	public void setAccounts(List<Account> accounts){
+		this.accounts=accounts;
+	}
 	
 }

@@ -23,6 +23,10 @@ public class Account {
 		
 		return result;
 	}
+
+	public void setAccounNumber(String newNum) {
+		this.accountNumber=newNum;
+	}
 	
 	public String getAccountNumber() {
 		return accountNumber;
