@@ -1,0 +1,29 @@
+/*
+ * Archivo build.gradle 
+ */
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    
+    // Asegúrate de que la versión de Guava esté correctamente especificada
+    implementation 'com.google.guava:guava:32.1.2-jre' // Versión completa
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
