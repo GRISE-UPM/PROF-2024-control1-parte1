@@ -24,6 +24,15 @@ public class Account {
 		return result;
 	}
 
+	void setTransaction(){
+		Transaction T =new Transaction();
+		T.setAmount((float)1.0);
+		transactions.add(T);
+	}
+	void setTransaction(Transaction T){
+		transactions.add(T);
+	}
+
 	public void setAccounNumber(String newNum) {
 		this.accountNumber=newNum;
 	}

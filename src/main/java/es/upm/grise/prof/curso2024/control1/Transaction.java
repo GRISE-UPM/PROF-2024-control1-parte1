@@ -8,5 +8,9 @@ public class Transaction {
 	public float getAmount() {
 		return amount;
 	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
 	
 }

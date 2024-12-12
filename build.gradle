@@ -6,6 +6,7 @@
  */
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 repositories {
@@ -29,4 +30,36 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacoco {
+    toolVersion = "0.8.12"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.5
+            }
+        }
+
+        rule {
+            enabled = true
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'METHOD'
+                value = 'TOTALCOUNT'
+                maximum = 1
+            }
+        }
+    }
 }
