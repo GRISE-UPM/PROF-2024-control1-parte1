@@ -18,8 +18,15 @@ pipeline {
     }
 
     post {
-        always {
-            echo 'Pipeline completado.'
+        failure {
+            script {
+                githubNotify context: 'Jenkins Build', status: 'FAILURE'
+            }
+        }
+        success {
+            script {
+                githubNotify context: 'Jenkins Build', status: 'SUCCESS'
+            }
         }
     }
 }
