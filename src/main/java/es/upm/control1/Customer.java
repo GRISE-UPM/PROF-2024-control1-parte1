@@ -10,7 +10,11 @@ public class Customer {
 	Customer() {
 		accounts = new ArrayList<Account>();
 	}
-	
+
+	public void addCustomer(Account account){
+		accounts.add(account);
+	}
+
 	public String getAccountWithHighestBalance() throws NoAccountsException {
 		
 		if(accounts.isEmpty()) {
