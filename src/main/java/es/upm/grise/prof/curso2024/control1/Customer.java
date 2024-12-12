@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Customer {
 	
-	private List<Account> accounts;
+	List<Account> accounts;
 	
 	Customer() {
 		accounts = new ArrayList<Account>();
@@ -20,6 +20,8 @@ public class Customer {
 		
 		String selectedAccount = "";
 		float maxBalance = 0;
+
+		
 		
 		for(Account account : accounts) {
 			

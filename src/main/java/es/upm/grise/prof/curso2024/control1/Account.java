@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Account {
 	
-	private String accountNumber;
-	private float initialAmount;
+	String accountNumber;
+	float initialAmount;
 	private List<Transaction> transactions;
 	
 	Account() {
