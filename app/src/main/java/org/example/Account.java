@@ -34,4 +34,7 @@ public class Account {
 	public void setNumber(String accounts) {
 		this.accountNumber = accounts;
 	}
+	public void setTran(List<Transaction> transactions){
+		this.transactions=transactions;
+	}
 }

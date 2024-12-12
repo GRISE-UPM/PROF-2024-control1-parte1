@@ -5,15 +5,16 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.List;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.*;
 
 public class AppTest {
-
     @Test
-    void testgetAccountWithHighestBalance() {
+    public void testgetAccountWithHighestBalance() {
         
         Customer customer = new Customer();
 
@@ -22,7 +23,7 @@ public class AppTest {
                 "Deberia de haber lanzado NoAccountsException cuando no hay cuentas asociadas.");
     }
     @Test
-    void testgetAccountWithHighestBalance2() throws NoAccountsException {
+    public void testgetAccountWithHighestBalance2() throws NoAccountsException {
         float a=2000;
         float b=3000;
         Customer customer = new Customer();
@@ -40,5 +41,47 @@ public class AppTest {
 
         assertEquals("2", highestBalanceAccountNumber,"Deberia haber lanzadoNoAccountsException cuando no hay cuentas asociadas.");
     }
+    @Test
+    public void testGetCurrentBalance(){
+        float initialAmount = 100; // Monto inicial
+        float a = 50; // Primera transacción
+        float b = 20; // Segunda transacción
+        float expectedBalance = initialAmount + a + b; // Saldo esperado
 
+        Transaction transaction1 = Mockito.mock(Transaction.class);
+        when(transaction1.getAmount()).thenReturn(a);
+
+        Transaction transaction2 = Mockito.mock(Transaction.class);
+        when(transaction2.getAmount()).thenReturn(b);
+
+
+        List<Transaction> transactions = new ArrayList<>();
+        transactions.add(transaction1);
+        transactions.add(transaction2);
+
+        Account account = new Account();
+        account.setTran(transactions);
+        account.setAmount(initialAmount);
+        float actualBalance = account.getCurrentBalance();
+
+        assertEquals(expectedBalance,actualBalance, "El balance no es el que se espera.");
+    }
+    public void testgetAccountWithHighestBalanceMock() throws NoAccountsException {
+        float a=2000;
+        float b=3000;
+        Customer customer = new Customer();
+        Account cuenta1=Mockito.mock(Account.class);
+        Account cuenta2=Mockito.mock(Account.class);
+        when(cuenta1.getCurrentBalance()).thenReturn(a);
+        when(cuenta2.getCurrentBalance()).thenReturn(b);
+        when(cuenta1.getAccountNumber()).thenReturn("1");
+        when(cuenta2.getAccountNumber()).thenReturn("2");
+        List<Account> accounts = new ArrayList<>();
+        accounts.add(cuenta1);
+        accounts.add(cuenta2);
+        customer.setAccounts(accounts);
+        String highestBalanceAccountNumber = customer.getAccountWithHighestBalance();
+
+        assertEquals("2", highestBalanceAccountNumber,"Deberia haber lanzadoNoAccountsException cuando no hay cuentas asociadas.");
+    }
 }
