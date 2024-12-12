@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eee50660-b2ad-4dcd-8d55-06ec338763e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/PROF-2024-control1.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/upm/grise/prof/curso2024/control1/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/upm/grise/prof/curso2024/control1/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/upm/grise/prof/curso2024/control1/NoAccountsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/upm/grise/prof/curso2024/control1/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/es/upm/grise/prof/curso2024/control1/CustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es/upm/grise/prof/curso2024/control1/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es/upm/grise/prof/curso2024/control1/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es/upm/grise/prof/curso2024/control1/NoAccountsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es/upm/grise/prof/curso2024/control1/Transaction.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +43,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -86,27 +91,77 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.PROF-2024-control1 [test]">
-    <configuration name="PROF-2024-control1 [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.CustomerTest.testGetAccountWithHighestBalance">
+    <configuration name="CustomerTest.getAccountWithHighestBalanceExceptionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="check" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;es.upm.grise.prof.curso2024.control1.CustomerTest.getAccountWithHighestBalanceExceptionTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerTest.getAccountWithHighestBalanceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;es.upm.grise.prof.curso2024.control1.CustomerTest.getAccountWithHighestBalanceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerTest.testGetAccountWithHighestBalance" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;es.upm.grise.prof.curso2024.control1.CustomerTest.testGetAccountWithHighestBalance&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="PROF-2024-control1 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -121,28 +176,6 @@
         <option name="taskNames">
           <list>
             <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PROF-2024-control1 [jacocoTestReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jacocoTestReport" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -190,10 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CustomerTest.testGetAccountWithHighestBalance" />
+        <item itemvalue="Gradle.CustomerTest.getAccountWithHighestBalanceExceptionTest" />
+        <item itemvalue="Gradle.CustomerTest.getAccountWithHighestBalanceTest" />
         <item itemvalue="Gradle.PROF-2024-control1 [test]" />
         <item itemvalue="Gradle.PROF-2024-control1 [dependencies]" />
-        <item itemvalue="Gradle.PROF-2024-control1 [check]" />
-        <item itemvalue="Gradle.PROF-2024-control1 [jacocoTestReport]" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +241,7 @@
       <updated>1734019821435</updated>
       <workItem from="1734019822458" duration="109000" />
       <workItem from="1734019966117" duration="202000" />
-      <workItem from="1734020182201" duration="378000" />
+      <workItem from="1734020182201" duration="2985000" />
     </task>
     <servers />
   </component>
