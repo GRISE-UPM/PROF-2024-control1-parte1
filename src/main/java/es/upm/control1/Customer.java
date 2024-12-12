@@ -11,7 +11,7 @@ public class Customer {
 		accounts = new ArrayList<Account>();
 	}
 
-	public void addCustomer(Account account){
+	public void addAccount(Account account){
 		accounts.add(account);
 	}
 
@@ -30,6 +30,7 @@ public class Customer {
 			if(account.getCurrentBalance() > maxBalance) {
 				
 				selectedAccount = account.getAccountNumber();
+				maxBalance = account.getCurrentBalance();
 				
 			}
 			

@@ -3,8 +3,6 @@ package es.upm.control1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CustomerTest {
@@ -40,9 +38,9 @@ class CustomerTest {
         midAccount.setAccountNumber(MID_ACCOUNT);
         lowestAccount.setAccountNumber(LOWEST_ACCOUNT);
 
-        customer.addCustomer(highestAccount);
-        customer.addCustomer(midAccount);
-        customer.addCustomer(lowestAccount);
+        customer.addAccount(highestAccount);
+        customer.addAccount(midAccount);
+        customer.addAccount(lowestAccount);
 
         Assertions.assertEquals(
                 HIGHEST_ACCOUNT,
